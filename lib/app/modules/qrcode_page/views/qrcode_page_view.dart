@@ -17,9 +17,6 @@ class QrcodePageView extends GetView<QrcodePageController> {
     ) {
       this.controller.controller = controller;
       controller.scannedDataStream.listen((scanData) {
-        // setState(() {
-        //   result = scanData;
-        // });
         this.controller.result = scanData;
         controller.pauseCamera();
         showDialog(
@@ -29,9 +26,14 @@ class QrcodePageView extends GetView<QrcodePageController> {
                 Navigator.of(context).pop();
               });
               return AlertDialog(
-                title: Text(
-                  'Your request is being processed',
-                  style: Theme.of(context).textTheme.subtitle1,
+                title: Center(
+                  child: Text(
+                    'Your request is being processed',
+                    style: Theme.of(context)
+                        .textTheme
+                        .subtitle1
+                        .copyWith(fontWeight: FontWeight.w400),
+                  ),
                 ),
                 content: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +65,12 @@ class QrcodePageView extends GetView<QrcodePageController> {
       body: SafeArea(
         child: Column(children: <Widget>[
           Expanded(
-              flex: 1, child: Center(child: Text('Please, scan it again'))),
+              flex: 1,
+              child: Center(
+                  child: Text(
+                'Please, scan the QR code',
+                style: Theme.of(context).textTheme.headline5,
+              ))),
           Expanded(
             flex: 10,
             child: Stack(children: [
@@ -87,7 +94,9 @@ class QrcodePageView extends GetView<QrcodePageController> {
               child: ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 300, height: 50),
                 child: ElevatedButton(
-                  child: Text('Flip camera'.toUpperCase()),
+                  child: Text('Flip camera'.toUpperCase(),
+                      style: Theme.of(context).textTheme.subtitle1.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w600)),
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(horizontal: 30),
                       primary: Color(0xFF297DC3)),

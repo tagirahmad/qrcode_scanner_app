@@ -49,10 +49,11 @@ class ScannedDataView extends GetView<ScannedDataController> {
                   const SizedBox(height: 10),
                   Text(
                     'Pfizer U.S. Pharmaceulicals Gr',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1
-                        .copyWith(color: Color(0xFF297DC3)),
+                    style: Theme.of(context).textTheme.bodyText1.copyWith(
+                        color: Color(
+                          0xFF297DC3,
+                        ),
+                        fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 20),
                   Row(
@@ -81,9 +82,21 @@ class ScannedDataView extends GetView<ScannedDataController> {
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("10 mg"),
+                            Text(
+                              "10 mg",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText1
+                                  .copyWith(fontWeight: FontWeight.w300),
+                            ),
                             const SizedBox(height: 10),
-                            Text("PD 155 10"),
+                            Text(
+                              "PD 155 10",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText1
+                                  .copyWith(fontWeight: FontWeight.w300),
+                            ),
                           ])
                     ],
                   ),
@@ -99,7 +112,11 @@ class ScannedDataView extends GetView<ScannedDataController> {
                               .copyWith(fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(height: 10),
-                        Text("X - Not for use in pregnancy"),
+                        Text("X - Not for use in pregnancy",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                .copyWith(fontWeight: FontWeight.w300)),
                       ]),
                   const SizedBox(height: 20),
                   Column(
@@ -113,7 +130,11 @@ class ScannedDataView extends GetView<ScannedDataController> {
                               .copyWith(fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(height: 10),
-                        Text("N - Not a controlled drug Typography"),
+                        Text("N - Not a controlled drug Typography",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                .copyWith(fontWeight: FontWeight.w300)),
                       ]),
                   const SizedBox(height: 20),
                   Column(
@@ -127,7 +148,11 @@ class ScannedDataView extends GetView<ScannedDataController> {
                               .copyWith(fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(height: 10),
-                        Text(QrcodePageController.to.result.code),
+                        Text(QrcodePageController.to.result.code,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                .copyWith(fontWeight: FontWeight.w300)),
                       ])
                 ],
               ),

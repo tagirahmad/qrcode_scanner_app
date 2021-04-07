@@ -20,7 +20,7 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Text(
                     'Please, scan the QR code',
-                    style: TextStyle(fontSize: 20),
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                   const SizedBox(height: 15.0 * 2),
                   SvgPicture.asset('assets/qrcode_logo.svg',
@@ -34,7 +34,11 @@ class HomeView extends GetView<HomeController> {
                       style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 30),
                           primary: Color(0xFF297DC3)),
-                      child: Text('Scan'.toUpperCase()),
+                      child: Text(
+                        'Scan'.toUpperCase(),
+                        style: Theme.of(context).textTheme.subtitle1.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.w600),
+                      ),
                     ),
                   )
                 ],
@@ -49,8 +53,8 @@ class HomeView extends GetView<HomeController> {
                   child: Text(
                     'How the app works?',
                     style: TextStyle(
-                      decoration: TextDecoration.underline,
-                    ),
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
