@@ -1,0 +1,6 @@
+<svg width="246" height="244" viewBox="0 0 246 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 75H3V13C3 8 8 3 13 3H77.5V0L11.5 0C6.5 0 0 6 0 12L0 75Z" fill="white"/>
+<path d="M75 243.5V240.5H13C8 240.5 3 235.5 3 230.5L3 166H0L0 232C0 237 6 243.5 12 243.5H75Z" fill="white"/>
+<path d="M170 243.5V240.5H232C237 240.5 242 235.5 242 230.5V166H245V232C245 237 239 243.5 233 243.5H170Z" fill="white"/>
+<path d="M245.5 75H242.5V13C242.5 8 237.5 3 232.5 3H168V0L234 0C239 0 245.5 6 245.5 12V75Z" fill="white"/>
+</svg>
