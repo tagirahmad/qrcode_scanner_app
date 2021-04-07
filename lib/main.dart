@@ -10,6 +10,7 @@ void main() {
       title: "QR Code Scanner",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      theme: ThemeData(fontFamily: 'SFProDisplay'),
     ),
   );
 }
