@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:qrcode_scanner/app/constants/app_colors.dart';
+import 'package:qrcode_scanner/app/constants/strings.dart';
 import 'package:qrcode_scanner/app/routes/app_pages.dart';
 
 import '../controllers/qrcode_page_controller.dart';
@@ -28,7 +30,7 @@ class QrcodePageView extends GetView<QrcodePageController> {
               return AlertDialog(
                 title: Center(
                   child: Text(
-                    'Your request is being processed',
+                    Strings.processing,
                     style: Theme.of(context)
                         .textTheme
                         .subtitle1
@@ -59,7 +61,7 @@ class QrcodePageView extends GetView<QrcodePageController> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             color: Colors.black,
-            tooltip: "Back",
+            tooltip: Strings.back,
             onPressed: () => Navigator.pop(context),
           )),
       body: SafeArea(
@@ -68,7 +70,7 @@ class QrcodePageView extends GetView<QrcodePageController> {
               flex: 1,
               child: Center(
                   child: Text(
-                'Please, scan the QR code',
+                Strings.pleaseScan,
                 style: Theme.of(context).textTheme.headline5,
               ))),
           Expanded(
@@ -94,12 +96,12 @@ class QrcodePageView extends GetView<QrcodePageController> {
               child: ConstrainedBox(
                 constraints: BoxConstraints.tightFor(width: 300, height: 50),
                 child: ElevatedButton(
-                  child: Text('Flip camera'.toUpperCase(),
+                  child: Text(Strings.flipCamera.toUpperCase(),
                       style: Theme.of(context).textTheme.subtitle1.copyWith(
                           color: Colors.white, fontWeight: FontWeight.w600)),
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(horizontal: 30),
-                      primary: Color(0xFF297DC3)),
+                      primary: AppColors.PRIMARY),
                   onPressed: () {
                     controller.controller.flipCamera();
                   },

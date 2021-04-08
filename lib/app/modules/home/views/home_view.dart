@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qrcode_scanner/app/constants/app_colors.dart';
 import 'package:qrcode_scanner/app/constants/links.dart';
+import 'package:qrcode_scanner/app/constants/strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -21,7 +23,7 @@ class HomeView extends GetView<HomeController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Please, scan the QR code',
+                    Strings.pleaseScan,
                     style: Theme.of(context).textTheme.headline5,
                   ),
                   const SizedBox(height: 15.0 * 2),
@@ -35,9 +37,9 @@ class HomeView extends GetView<HomeController> {
                       onPressed: () => Get.toNamed(Routes.QRCODE_PAGE),
                       style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 30),
-                          primary: Color(0xFF297DC3)),
+                          primary: AppColors.PRIMARY),
                       child: Text(
-                        'Scan'.toUpperCase(),
+                        Strings.scan.toUpperCase(),
                         style: Theme.of(context).textTheme.subtitle1.copyWith(
                             color: Colors.white, fontWeight: FontWeight.w600),
                       ),
@@ -53,7 +55,7 @@ class HomeView extends GetView<HomeController> {
                 child: TextButton(
                   onPressed: _launchURL,
                   child: Text(
-                    'How the app works?',
+                    Strings.howAppWorks,
                     style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontWeight: FontWeight.w600),
