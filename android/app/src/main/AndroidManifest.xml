@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.qrcode_scanner">
+    package="com.tagtracesystems.tts">
 
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
@@ -11,7 +11,7 @@
     
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="qrcode_scanner">
+        android:label="TTS">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

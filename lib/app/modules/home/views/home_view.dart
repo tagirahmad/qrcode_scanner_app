@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qrcode_scanner/app/constants/app_colors.dart';
 import 'package:qrcode_scanner/app/constants/links.dart';
 import 'package:qrcode_scanner/app/constants/strings.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:qrcode_scanner/app/services/url_launcher_service.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
@@ -53,7 +53,7 @@ class HomeView extends GetView<HomeController> {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10.0),
                 child: TextButton(
-                  onPressed: _launchURL,
+                  onPressed: () => UrlLauncherService.launchURL(url),
                   child: Text(
                     Strings.howAppWorks,
                     style: TextStyle(
@@ -68,7 +68,4 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
-
-  void _launchURL() async =>
-      await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
 }

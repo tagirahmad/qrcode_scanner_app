@@ -8,6 +8,11 @@ class QrcodePageController extends GetxController {
   Barcode result;
   QRViewController controller;
 
+  final _selectedIndex = 0.obs;
+  
+  get selectedIndex => _selectedIndex.value;
+  set selectedIndex(index) => _selectedIndex.value = index;
+
   @override
   void onInit() async {
     super.onInit();

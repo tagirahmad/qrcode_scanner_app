@@ -1,4 +1,4 @@
-package com.example.qrcode_scanner
+package com.tagtracesystems.tts
 
 import android.content.ContentResolver
 import android.content.Intent
