@@ -18,9 +18,9 @@ class SplashViewState extends State<SplashView>
     var _seen = (prefs.getBool('seen') ?? false);
 
     if (_seen) {
-      Get.toNamed(Routes.QRCODE_PAGE);
+      Get.offAndToNamed(Routes.QRCODE_PAGE);
     } else {
-      Get.toNamed(Routes.INTRO);
+      Get.offAndToNamed(Routes.INTRO);
     }
   }
 

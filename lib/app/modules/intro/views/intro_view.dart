@@ -32,7 +32,7 @@ class IntroView extends GetView<IntroController> {
       "onPressed": () async {
         var prefs = await SharedPreferences.getInstance();
         await prefs.setBool('seen', true);
-        Get.toNamed(Routes.QRCODE_PAGE);
+        Get.offAndToNamed(Routes.QRCODE_PAGE);
       }
     },
   ];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'package:get/get.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -23,7 +24,7 @@ class QrcodePageView extends GetView<QrcodePageController> {
   final List<Map<String, dynamic>> menuItems = [
     {
       'title': 'Visit our website',
-      'onTap': () {},
+      'onTap': () => UrlLauncherService.launchURL(ourWebsite),
     },
     {
       'title': 'E-mail us',
@@ -31,13 +32,15 @@ class QrcodePageView extends GetView<QrcodePageController> {
     },
     {
       'title': 'User Agreement',
-      'onTap': () {},
+      'onTap': () => UrlLauncherService.launchURL(userAgreement),
     },
     {
       'title': 'How to use',
-      'onTap': () {},
+      'onTap': () => UrlLauncherService.launchURL(howToUse),
     },
   ];
+
+  DateTime currentBackPressTime;
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +91,19 @@ class QrcodePageView extends GetView<QrcodePageController> {
       ),
     ];
 
+    Future<bool> onWillPop() {
+      DateTime now = DateTime.now();
+      if (currentBackPressTime == null ||
+          now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+        currentBackPressTime = now;
+        Fluttertoast.showToast(msg: "Tap again to exit");
+        return Future.value(false);
+      }
+      return Future.value(true);
+    }
+
     return WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: onWillPop,
       child: Scaffold(
         backgroundColor: Colors.white,
         key: _scaffoldKey,

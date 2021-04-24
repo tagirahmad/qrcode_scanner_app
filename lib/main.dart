@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         } else {
           // Loading is done, return the app:
           return GetMaterialApp(
-            title: "QR Code Scanner",
+            title: "TTS",
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
             theme: ThemeData(
