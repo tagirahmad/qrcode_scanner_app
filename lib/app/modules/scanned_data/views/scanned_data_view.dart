@@ -12,9 +12,10 @@ class ScannedDataView extends GetView<ScannedDataController> {
   Widget build(BuildContext context) {
     return WillPopScope(
       // ignore: missing_return
-      onWillPop: () {
-        Get.back();
+      onWillPop: () async {
+        // Get.back();
         QrcodePageController.to.controller.resumeCamera();
+        return true;
       },
       child: Scaffold(
         appBar: AppBar(

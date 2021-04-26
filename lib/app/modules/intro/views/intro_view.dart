@@ -100,9 +100,6 @@ class IntroView extends GetView<IntroController> {
                             onPressed: controller.current.value == 0
                                 ? carouselItems[0]['onPressed']
                                 : carouselItems[1]['onPressed'],
-                            // onPressed: () => buttonCarouselController.nextPage(
-                            //     duration: Duration(milliseconds: 300),
-                            //     curve: Curves.linear)),
                             child: Text(
                               controller.current.value == 0
                                   ? carouselItems[0]['buttonText']
@@ -113,9 +110,6 @@ class IntroView extends GetView<IntroController> {
                                 primary: AppColors.PRIMARY),
                           ),
                         ),
-                        // const SizedBox(
-                        //   height: Dimensions.ITEM_INDENT * 15,
-                        // ),
                       ],
                     ),
                   ),
@@ -152,86 +146,3 @@ class IntroView extends GetView<IntroController> {
     );
   }
 }
-
-// Column(
-//                           mainAxisAlignment: MainAxisAlignment.center,
-//                           crossAxisAlignment: CrossAxisAlignment.center,
-//                           children: [
-//                             const SizedBox(
-//                               height: Dimensions.ITEM_INDENT * 3,
-//                             ),
-//                             SvgPicture.asset(
-//                               i['imagePath'],
-//                               semanticsLabel: '',
-//                               height: 210,
-//                               width: 210,
-//                             ),
-//                             const SizedBox(
-//                               height: Dimensions.ITEM_INDENT * 3,
-//                             ),
-//                             Text(
-//                               i['title'],
-//                               style: Theme.of(context)
-//                                   .textTheme
-//                                   .headline5
-//                                   .copyWith(fontWeight: FontWeight.bold),
-//                               textAlign: TextAlign.center,
-//                             ),
-//                             const SizedBox(
-//                               height: Dimensions.ITEM_INDENT * 2,
-//                             ),
-//                             Text(
-//                               i['subtitle'],
-//                               style: Theme.of(context)
-//                                   .textTheme
-//                                   .bodyText2
-//                                   .copyWith(fontWeight: FontWeight.w300),
-//                               textAlign: TextAlign.center,
-//                             ),
-//                             const SizedBox(
-//                               height: Dimensions.ITEM_INDENT * 3,
-//                             ),
-//                             ConstrainedBox(
-//                               constraints: BoxConstraints.tightFor(
-//                                   width: 250, height: 50),
-//                               child: ElevatedButton(
-//                                 onPressed: i['onPressed'],
-//                                 // onPressed: () => buttonCarouselController.nextPage(
-//                                 //     duration: Duration(milliseconds: 300),
-//                                 //     curve: Curves.linear),
-//                                 child: Text(
-//                                   i['buttonText'],
-//                                 ),
-//                                 style: ElevatedButton.styleFrom(
-//                                     padding:
-//                                         EdgeInsets.symmetric(horizontal: 30),
-//                                     primary: AppColors.PRIMARY),
-//                               ),
-//                             ),
-//                             // const SizedBox(
-//                             //   height: Dimensions.ITEM_INDENT * 15,
-//                             // ),
-//                             Positioned(
-//                               bottom: 30,
-//                               left: 0,
-//                               right: 0,
-//                               child: Row(
-//                                 mainAxisAlignment: MainAxisAlignment.center,
-//                                 children: carouselItems.map((url) {
-//                                   int index = carouselItems.indexOf(url);
-//                                   return Container(
-//                                     width: 60.0,
-//                                     height: 2.0,
-//                                     margin: EdgeInsets.symmetric(
-//                                       vertical: 10.0,
-//                                       horizontal: 8.0,
-//                                     ),
-//                                     color: controller.current.value == index
-//                                         ? Color.fromRGBO(41, 125, 195, 0.9)
-//                                         : Color.fromRGBO(41, 125, 195, 0.4),
-//                                   );
-//                                 }).toList(),
-//                               ),
-//                             ),
-//                           ],
-//                         ),

@@ -11,6 +11,7 @@ import 'package:qrcode_scanner/app/modules/qrcode_page/views/scan_content.dart';
 import 'package:qrcode_scanner/app/routes/app_pages.dart';
 import 'package:qrcode_scanner/app/services/url_launcher_service.dart';
 
+import '../../../constants/app_colors.dart';
 import '../controllers/qrcode_page_controller.dart';
 import 'menu_content.dart';
 
@@ -76,7 +77,6 @@ class QrcodePageView extends GetView<QrcodePageController> {
                 ),
               );
             }).then((value) {
-          // controller.resumeCamera();
           Get.toNamed(Routes.SCANNED_DATA, arguments: scanData);
         });
       });
@@ -114,6 +114,7 @@ class QrcodePageView extends GetView<QrcodePageController> {
         bottomNavigationBar: Obx(
           () => BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
+            selectedItemColor: AppColors.PRIMARY,
             items: [
               BottomNavigationBarItem(
                 icon: Padding(
